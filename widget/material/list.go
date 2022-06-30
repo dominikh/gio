@@ -126,7 +126,7 @@ func (s ScrollbarStyle) Layout(gtx layout.Context, axis layout.Axis, viewportSta
 	s.Scrollbar.Layout(gtx, axis, viewportStart, viewportEnd)
 
 	// Darken indicator if hovered.
-	if s.Scrollbar.IndicatorHovered() {
+	if s.Scrollbar.IndicatorHovered() || s.Scrollbar.Dragging() {
 		s.Indicator.Color = s.Indicator.HoverColor
 	}
 
